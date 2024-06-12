@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import $axios from "../../../lib/axios/axios.instance";
 import Loader from "../../../component/Loader";
 import ProductCard from "../../../component/ProductCard";
-import SellProductPrompt from "../../../component/SellerProductPrompt";
 
 const AdminProductList = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,11 +12,11 @@ const AdminProductList = () => {
   const navigate = useNavigate();
 
   const { isPending, data } = useQuery({
-    queryKey: ["get-seller-products", currentPage],
+    queryKey: ["get-admin-products", currentPage],
     queryFn: async () => {
       return await $axios.post("/product/list/admin", {
         page: currentPage,
-        limit: 3
+        limit: 8
       });
     }
   });
@@ -41,7 +40,7 @@ const AdminProductList = () => {
         add product
       </Button>
 
-      {productList.length === 0 && <SellProductPrompt />}
+      {productList.length === 0}
       <Box
         sx={{
           display: "flex",

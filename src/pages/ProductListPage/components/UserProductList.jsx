@@ -15,8 +15,8 @@ import { debounce } from "lodash";
 import $axios from "../../../lib/axios/axios.instance";
 import Loader from "../../../component/Loader";
 import ProductCard from "../../../component/ProductCard";
-import ProductFilterDialog from "../../../component/ProductFilterDialog";
 import { clearFilter } from "../../../store/slices/productSlice";
+import ProductFilterDialog from "../../../component/ProductFilterDialog";
 
 const UserProductList = () => {
   const [searchText, setSearchText] = useState("");
@@ -57,10 +57,10 @@ const UserProductList = () => {
     setCurrentPage(1);
   };
 
-  // we have delayed this function to wait for user to write down complete search text
-  //   const delayedUpdateSearchText = useCallback(debounce(updateSearchText, 500), [
-  //     searchText
-  //   ]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const delayedUpdateSearchText = useCallback(debounce(updateSearchText, 500), [
+    searchText
+  ]);
 
   if (isPending) {
     return <Loader />;
@@ -84,7 +84,7 @@ const UserProductList = () => {
           <OutlinedInput
             defaultValue={searchText || ""}
             onChange={(event) => {
-              //   delayedUpdateSearchText(event.target.value);
+              delayedUpdateSearchText(event.target.value);
             }}
             placeholder="Search products here..."
             startAdornment={

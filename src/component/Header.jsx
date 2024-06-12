@@ -56,7 +56,7 @@ const Header = (props) => {
     queryFn: async () => {
       return await $axios.get("/cart/item/count");
     },
-    enabled: userRole === "buyer"
+    enabled: userRole === "user"
   });
 
   const cartItemCount = data?.data?.cartItemCount;
@@ -121,7 +121,7 @@ const Header = (props) => {
               </Button>
             ))}
 
-            {userRole === "buyer" && (
+            {userRole === "user" && (
               <IconButton
                 sx={{ color: "#fff" }}
                 onClick={() => {
