@@ -1,4 +1,5 @@
 import MinimumLayout from "../layout/MinimumLayout.jsx";
+import Home from "../pages/HomePage/Home.jsx";
 import Login from "../pages/LoginPage/Login.jsx";
 import Register from "../pages/RegisterPage/Register.jsx";
 

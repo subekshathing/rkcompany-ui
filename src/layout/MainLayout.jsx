@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 // import Footer from "../component/Footer";
 import Header from "../component/Header";
 import { Box } from "@mui/material";
+import Footer from "../component/Footer";
 // import CustomSnackbar from "../component/CustomSnackbar";
 
 const MainLayout = () => {
@@ -22,7 +23,7 @@ const MainLayout = () => {
       </Box>
 
       {/* <CustomSnackbar /> */}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

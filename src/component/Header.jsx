@@ -28,13 +28,23 @@ const navItems = [
   },
   {
     id: 2,
-    name: "Product",
-    path: "/products"
+    name: "Shop",
+    path: "/shop"
   },
   {
     id: 3,
-    name: "About",
+    name: "About Us",
     path: "/about"
+  },
+  {
+    id: 3,
+    name: "Service",
+    path: "/services"
+  },
+  {
+    id: 3,
+    name: "Contact",
+    path: "/contact"
   }
 ];
 
@@ -90,7 +100,7 @@ const Header = (props) => {
   return (
     <Box sx={{ display: "flex", marginBottom: "4rem" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ background: "#49243E" }}>
+      <AppBar component="nav" sx={{ background: "green" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -108,7 +118,11 @@ const Header = (props) => {
           >
             Raksirang Krish & Pashu Firm
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" }
+            }}
+          >
             {navItems.map((item) => (
               <Button
                 key={item.id}
@@ -120,37 +134,67 @@ const Header = (props) => {
                 {item.name}
               </Button>
             ))}
-
-            {userRole === "user" && (
-              <IconButton
+            {userRole !== "user" && userRole !== "admin" && (
+              <Button
                 sx={{ color: "#fff" }}
                 onClick={() => {
-                  navigate("/cart");
+                  navigate("/login");
                 }}
               >
-                <Badge badgeContent={cartItemCount} color="success">
-                  <ShoppingCartOutlinedIcon />
-                </Badge>
-              </IconButton>
+                Login
+              </Button>
+            )}
+            {userRole === "user" && (
+              <>
+                <IconButton
+                  sx={{ color: "#fff" }}
+                  onClick={() => {
+                    navigate("/cart");
+                  }}
+                >
+                  <Badge badgeContent={cartItemCount} color="success">
+                    <ShoppingCartOutlinedIcon />
+                  </Badge>
+                </IconButton>
+                <Typography sx={{ margin: "1rem", fontWeight: "bold" }}>
+                  Hi, {localStorage.getItem("firstName")}
+                </Typography>
+                <Tooltip title="Logout">
+                  <IconButton
+                    sx={{ color: "#fff" }}
+                    onClick={() => {
+                      navigate("/home");
+
+                      // clear local storage
+                      localStorage.clear();
+                    }}
+                  >
+                    <LogoutIcon />
+                  </IconButton>
+                </Tooltip>
+              </>
+            )}
+            {userRole === "admin" && (
+              <>
+                <Typography sx={{ m: "1rem", fontWeight: "bold" }}>
+                  Hi, {localStorage.getItem("firstName")}
+                </Typography>
+                <Tooltip title="Logout">
+                  <IconButton
+                    sx={{ color: "#fff" }}
+                    onClick={() => {
+                      navigate("/home");
+
+                      // clear local storage
+                      localStorage.clear();
+                    }}
+                  >
+                    <LogoutIcon />
+                  </IconButton>
+                </Tooltip>
+              </>
             )}
           </Box>
-
-          <Typography sx={{ margin: "0 1rem", fontWeight: "bold" }}>
-            Hi, {localStorage.getItem("firstName")}
-          </Typography>
-          <Tooltip title="Logout">
-            <IconButton
-              sx={{ color: "#fff" }}
-              onClick={() => {
-                navigate("/login");
-
-                // clear local storage
-                localStorage.clear();
-              }}
-            >
-              <LogoutIcon />
-            </IconButton>
-          </Tooltip>
         </Toolbar>
       </AppBar>
       <nav>

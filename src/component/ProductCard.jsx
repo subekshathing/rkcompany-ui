@@ -15,14 +15,14 @@ const ProductCard = (props) => {
   return (
     <Card
       sx={{
-        width: "500px",
+        width: "300px",
         boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
       }}
     >
       <CardMedia
         component="img"
         sx={{
-          height: 500,
+          height: "200px",
           width: "100%",
           cursor: "pointer",
           objectFit: "cover"
@@ -56,7 +56,7 @@ const ProductCard = (props) => {
       <CardActions>
         <Button
           variant="contained"
-          color="secondary"
+          color="success"
           fullWidth
           onClick={() => {
             navigate(`/product-detail/${props._id}`);

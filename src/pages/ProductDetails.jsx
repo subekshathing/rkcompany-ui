@@ -73,6 +73,7 @@ const ProductDetail = () => {
   return (
     <Box
       sx={{
+        height: "600px",
         display: "flex",
         boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
         padding: "3rem",
@@ -100,7 +101,7 @@ const ProductDetail = () => {
           flexDirection: "column",
           justifyContent: "space-around",
           alignItems: "flex-start",
-          gap: "2rem"
+          gap: "1rem"
         }}
       >
         <Typography variant="h5">{productDetail.name}</Typography>
@@ -135,7 +136,23 @@ const ProductDetail = () => {
             sx={{ fontSize: "1rem" }}
           />
         </Stack>
-
+        {userRole !== "admin" && userRole !== "user" && (
+          <>
+            <Typography sx={{ fontWeight: "bold" }}>
+              please login to buy product
+            </Typography>
+            <Button
+              sx={{ color: "#fff", fontWeight: "bold" }}
+              onClick={() => {
+                navigate("/login");
+              }}
+              variant="contained"
+              color="success"
+            >
+              Login
+            </Button>
+          </>
+        )}
         {userRole === "admin" && (
           <Stack direction="row" spacing={2} sx={{ width: "100%" }}>
             <Button

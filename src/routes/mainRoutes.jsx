@@ -7,6 +7,10 @@ import AddProduct from "../pages/AddProduct";
 import ProductDetail from "../pages/ProductDetails";
 import EditProduct from "../pages/EditProduct";
 import Cart from "../pages/Cart";
+import BuyProductList from "../component/BuyProducts";
+import About from "../pages/About";
+import Service from "../pages/servicesPage/Service";
+import ContactPage from "../pages/ContactPage";
 
 const mainRoutes = [
   {
@@ -26,10 +30,18 @@ const mainRoutes = [
         path: "products",
         element: <ProductList />
       },
-      // {
-      //   path: "about",
-      //   element: <About />
-      // },
+      {
+        path: "services",
+        element: <Service />
+      },
+      {
+        path: "about",
+        element: <About />
+      },
+      {
+        path: "contact",
+        element: <ContactPage />
+      },
       {
         path: "add-product",
         element: <AddProduct />
@@ -45,6 +57,10 @@ const mainRoutes = [
       {
         path: "cart",
         element: <Cart />
+      },
+      {
+        path: "shop",
+        element: <BuyProductList />
       }
     ]
   }

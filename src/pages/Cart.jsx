@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import $axios from "../lib/axios/axios.instance";
 import CartItemTable from "../component/CartItemTable";
 import KeepShopping from "../component/KeepShoping";
+import theme from "../theme/theme";
 
 const Cart = () => {
   // get cart items
@@ -31,10 +32,11 @@ const Cart = () => {
         <Box
           sx={{
             display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
             justifyContent: "space-between",
+            gap: "2rem",
             alignItems: "center",
-
-            width: "90%"
+            width: "100%"
           }}
         >
           <CartItemTable cartData={cartData} />

@@ -88,7 +88,7 @@ const UserProductList = () => {
             }}
             placeholder="Search products here..."
             startAdornment={
-              <InputAdornment position="start" sx={{ color: "purple" }}>
+              <InputAdornment position="start" sx={{ color: "green" }}>
                 <SearchIcon sx={{ fontSize: "2rem" }} />
               </InputAdornment>
             }

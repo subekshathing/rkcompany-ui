@@ -37,7 +37,7 @@ const ProductFilterDialog = () => {
 
   return (
     <React.Fragment>
-      <Button variant="contained" onClick={handleClickOpen}>
+      <Button variant="contained" color="success" onClick={handleClickOpen}>
         Filter product
       </Button>
       <Dialog open={open} onClose={handleClose}>
