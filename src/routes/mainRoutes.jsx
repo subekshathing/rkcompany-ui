@@ -1,13 +1,14 @@
 // import AuthGuard from "../guard/AuthGuard";
 import MainLayout from "../layout/MainLayout";
+import Home from "../pages/HomePage/Home";
+import ProductList from "../pages/ProductListPage/ProductList";
 // import About from "../pages/About";
 // import AddProduct from "../pages/AddProduct";
 // import Cart from "../pages/Cart";
 // import DatePickerForm from "../pages/DatePickerForm";
 // import EditProduct from "../pages/EditProduct";
-import Home from "../pages/Home";
+// import Home from "../pages/HomePage/Home";
 // import ProductDetail from "../pages/ProductDetail";
-// import ProductList from "../pages/ProductList";
 
 const mainRoutes = [
   {
@@ -22,11 +23,11 @@ const mainRoutes = [
       {
         path: "home",
         element: <Home />
+      },
+      {
+        path: "products",
+        element: <ProductList />
       }
-      // {
-      //   path: "products",
-      //   element: <ProductList />
-      // },
       // {
       //   path: "about",
       //   element: <About />
