@@ -15,12 +15,7 @@ import ContactPage from "../pages/ContactPage";
 const mainRoutes = [
   {
     path: "/",
-    element: (
-      // <AuthGuard>
-      //   <MainLayout />
-      // </AuthGuard>
-      <MainLayout />
-    ),
+    element: <MainLayout />,
     children: [
       {
         path: "home",
@@ -61,6 +56,10 @@ const mainRoutes = [
       {
         path: "shop",
         element: <BuyProductList />
+      },
+      {
+        path: "products",
+        element: <ProductList />
       }
     ]
   }

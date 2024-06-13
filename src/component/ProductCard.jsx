@@ -7,7 +7,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Chip, Stack, Tooltip } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
 import { fallbackImage } from "../constants/general.costants";
 
 const ProductCard = (props) => {

@@ -156,17 +156,6 @@ const Register = () => {
                   <FormHelperText error>{errors.number}</FormHelperText>
                 ) : null}
               </FormControl>
-              {/* <FormControl fullWidth required>
-                <InputLabel>Role</InputLabel>
-                <Select label="Role" {...getFieldProps("role")}>
-                  <MenuItem value="user">User</MenuItem>
-                  <MenuItem value="admin">Admin</MenuItem>
-                </Select>
-
-                {touched.role && errors.role ? (
-                  <FormHelperText error>{errors.role}</FormHelperText>
-                ) : null}
-              </FormControl> */}
 
               <FormControl fullWidth>
                 <InputLabel>Gender</InputLabel>
@@ -183,7 +172,7 @@ const Register = () => {
 
               <Button
                 variant="contained"
-                color="secondary"
+                color="success"
                 type="submit"
                 sx={{ mt: "1rem" }}
               >

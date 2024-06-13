@@ -26,13 +26,9 @@ const navItems = [
     name: "Home",
     path: "/home"
   },
+
   {
     id: 2,
-    name: "Shop",
-    path: "/shop"
-  },
-  {
-    id: 3,
     name: "About Us",
     path: "/about"
   },
@@ -42,7 +38,7 @@ const navItems = [
     path: "/services"
   },
   {
-    id: 3,
+    id: 4,
     name: "Contact",
     path: "/contact"
   }
@@ -74,7 +70,7 @@ const Header = (props) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Raksirang Krish & Pashu Firm
+        R Krishi & Pashu Firm
       </Typography>
       <Divider />
       <List>
@@ -100,7 +96,7 @@ const Header = (props) => {
   return (
     <Box sx={{ display: "flex", marginBottom: "4rem" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ background: "green" }}>
+      <AppBar component="nav" sx={{ background: "#25783e" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -116,7 +112,7 @@ const Header = (props) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            Raksirang Krish & Pashu Firm
+            R Krishi & Pashu Firm
           </Typography>
           <Box
             sx={{
@@ -135,17 +131,35 @@ const Header = (props) => {
               </Button>
             ))}
             {userRole !== "user" && userRole !== "admin" && (
-              <Button
-                sx={{ color: "#fff" }}
-                onClick={() => {
-                  navigate("/login");
-                }}
-              >
-                Login
-              </Button>
+              <>
+                <Button
+                  sx={{ color: "#fff", fontWeight: "500" }}
+                  onClick={() => {
+                    navigate("/shop");
+                  }}
+                >
+                  Shop
+                </Button>
+                <Button
+                  sx={{ color: "#fff", fontWeight: "bold" }}
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  Login
+                </Button>
+              </>
             )}
             {userRole === "user" && (
               <>
+                <Button
+                  sx={{ color: "#fff" }}
+                  onClick={() => {
+                    navigate("/products");
+                  }}
+                >
+                  Shop
+                </Button>
                 <IconButton
                   sx={{ color: "#fff" }}
                   onClick={() => {
@@ -176,6 +190,14 @@ const Header = (props) => {
             )}
             {userRole === "admin" && (
               <>
+                <Button
+                  sx={{ color: "#fff" }}
+                  onClick={() => {
+                    navigate("/products");
+                  }}
+                >
+                  Shop
+                </Button>
                 <Typography sx={{ m: "1rem", fontWeight: "bold" }}>
                   Hi, {localStorage.getItem("firstName")}
                 </Typography>

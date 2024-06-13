@@ -94,7 +94,7 @@ const Login = () => {
 
                 <Button
                   variant="contained"
-                  color="secondary"
+                  color="success"
                   type="submit"
                   disabled={isPending}
                 >

@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Typography, Button, Grid, Link } from "@mui/material";
-import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -21,11 +22,12 @@ const Footer = () => {
       </Typography>
       <Button
         variant="contained"
-        color="primary"
-        component={Link}
-        to="/contact"
+        sx={{ color: "#fff", fontWeight: "500" }}
+        onClick={() => {
+          navigate("/contact");
+        }}
       >
-        Get in Touch
+        Get In Touch
       </Button>
       <Box mt={3}>
         <Typography variant="body2">
