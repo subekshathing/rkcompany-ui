@@ -12,47 +12,6 @@ export const productCategories = [
 
 export const fallbackImage =
   "https://t3.ftcdn.net/jpg/05/88/70/78/360_F_588707867_pjpsqF5zUNMV1I2g8a3tQAYqinAxFkQp.jpg";
-import VaccinesIcon from "@mui/icons-material/Vaccines";
-import PestControlIcon from "@mui/icons-material/PestControl";
-export const services = [
-  {
-    title: "Treatment of Livestocks",
-    description:
-      "Comprehensive healthcare services for livestock including vaccinations, deworming, and disease management.",
-    link: "/livestock-treatment",
-    icon: <VaccinesIcon />
-  },
-  {
-    title: "Insecticides or Pesticides",
-    description:
-      "Effective pest and insect management solutions to protect crops and livestock from harmful pests.",
-    link: "/insecticides-pesticides",
-    icon: <PestControlIcon />
-  },
-  {
-    title: "Artificial Insemination",
-    description:
-      "Expert artificial insemination services for improved breeding and genetic diversity.",
-    link: "/artificial-insemination",
-    icon: <VaccinesIcon />
-  },
-  {
-    title: "Goat Fertilizer",
-    description:
-      "High-quality organic goat fertilizer for enhancing soil fertility and crop growth.",
-    link: "/goat-fertilizer",
-    icon: <VaccinesIcon />
-  },
-  {
-    title: "Goat Sterilization",
-    description:
-      "High-quality organic goat fertilizer for enhancing soil fertility and crop growth.",
-    link: "/goat-fertilizer",
-    icon: <VaccinesIcon />
-  }
-
-  // Add more services with their descriptions, links, and images
-];
 
 export const servicesList = [
   {

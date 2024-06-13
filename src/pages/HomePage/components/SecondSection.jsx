@@ -2,7 +2,49 @@ import React from "react";
 import { Box, Typography, Button, Grid, Divider, Stack } from "@mui/material";
 import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
 import { motion } from "framer-motion";
-import { services } from "../../../constants/general.costants";
+
+import VaccinesIcon from "@mui/icons-material/Vaccines";
+import PestControlIcon from "@mui/icons-material/PestControl";
+
+const services = [
+  {
+    title: "Treatment of Livestocks",
+    description:
+      "Comprehensive healthcare services for livestock including vaccinations, deworming, and disease management.",
+    link: "/livestock-treatment",
+    icon: <VaccinesIcon />
+  },
+  {
+    title: "Insecticides or Pesticides",
+    description:
+      "Effective pest and insect management solutions to protect crops and livestock from harmful pests.",
+    link: "/insecticides-pesticides",
+    icon: <PestControlIcon />
+  },
+  {
+    title: "Artificial Insemination",
+    description:
+      "Expert artificial insemination services for improved breeding and genetic diversity.",
+    link: "/artificial-insemination",
+    icon: <VaccinesIcon />
+  },
+  {
+    title: "Goat Fertilizer",
+    description:
+      "High-quality organic goat fertilizer for enhancing soil fertility and crop growth.",
+    link: "/goat-fertilizer",
+    icon: <VaccinesIcon />
+  },
+  {
+    title: "Goat Sterilization",
+    description:
+      "High-quality organic goat fertilizer for enhancing soil fertility and crop growth.",
+    link: "/goat-fertilizer",
+    icon: <VaccinesIcon />
+  }
+
+  // Add more services with their descriptions, links, and images
+];
 
 const OurServices = () => {
   return (
