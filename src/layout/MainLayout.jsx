@@ -15,13 +15,14 @@ const MainLayout = () => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          margin: "5rem 0"
+          paddingBottom: "2rem"
         }}
       >
         <Outlet />
       </Box>
 
       <CustomSnackbar />
+
       <Footer />
     </>
   );

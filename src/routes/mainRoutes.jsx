@@ -11,6 +11,8 @@ import BuyProductList from "../component/BuyProducts";
 import About from "../pages/About";
 import Service from "../pages/servicesPage/Service";
 import ContactPage from "../pages/ContactPage";
+import Login from "../pages/LoginPage/Login";
+import Register from "../pages/RegisterPage/Register";
 
 const mainRoutes = [
   {
@@ -18,8 +20,12 @@ const mainRoutes = [
     element: <MainLayout />,
     children: [
       {
-        path: "home",
-        element: <Home />
+        path: "login",
+        element: <Login />
+      },
+      {
+        path: "register",
+        element: <Register />
       },
       {
         path: "products",

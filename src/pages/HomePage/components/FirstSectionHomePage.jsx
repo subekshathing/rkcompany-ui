@@ -10,14 +10,13 @@ const HomePage = () => {
   return (
     <Box
       sx={{
-        padding: "2rem",
         textAlign: "center",
         backgroundImage: `url(${backgroundImageUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "100vh",
         display: "flex",
-        width: "100vw",
+        width: "100%",
         flexDirection: "column",
         justifyContent: "center"
       }}

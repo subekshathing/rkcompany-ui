@@ -31,7 +31,7 @@ const About = () => {
           backgroundPosition: "center",
           minHeight: "100vh",
           display: "flex",
-          width: "100vw",
+
           flexDirection: "column",
           justifyContent: "center"
         }}
