@@ -46,14 +46,21 @@ const BuyProductList = () => {
       maxPrice
     ],
     queryFn: async () => {
-      return await $axios.post("/product/list", {
-        page: currentPage,
-        limit: 6,
-        searchText: searchText || null,
-        category: category || null,
-        minPrice: minPrice || 0,
-        maxPrice: maxPrice || 0
-      });
+      try {
+        const response = await $axios.post("/product/list", {
+          page: currentPage,
+          limit: 6,
+          searchText: searchText || null,
+          category: category || null,
+          minPrice: minPrice || 0,
+          maxPrice: maxPrice || 0
+        });
+
+        return response.data; // Assuming the response contains data you want to return
+      } catch (error) {
+        console.error("Error in queryFn:", error);
+        throw error; // Rethrow the error to propagate it further if needed
+      }
     }
   });
 
