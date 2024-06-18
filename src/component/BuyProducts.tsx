@@ -46,25 +46,19 @@ const BuyProductList = () => {
       maxPrice
     ],
     queryFn: async () => {
-      try {
-        const response = await $axios.post("/product/list", {
-          page: currentPage,
-          limit: 6,
-          searchText: searchText || null,
-          category: category || null,
-          minPrice: minPrice || 0,
-          maxPrice: maxPrice || 0
-        });
-
-        return response.data; // Assuming the response contains data you want to return
-      } catch (error) {
-        console.error("Error in queryFn:", error);
-        throw error; // Rethrow the error to propagate it further if needed
-      }
+      return await $axios.post("/product/list", {
+        page: currentPage,
+        limit: 6,
+        searchText: searchText || null,
+        category: category || null,
+        minPrice: minPrice || 0,
+        maxPrice: maxPrice || 0
+      });
     }
   });
 
   const productList = data?.data?.productList;
+  console.log(productList);
   const totalPage = data?.data?.totalPage;
 
   const updateSearchText = (text) => {
